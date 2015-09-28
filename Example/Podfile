@@ -6,4 +6,5 @@ target 'FBNetworkErrorLogger_Tests', :exclusive => true do
   pod "FBNetworkErrorLogger", :path => "../"
 
   pod 'Kiwi'
+  pod 'OHHTTPStubs'
 end

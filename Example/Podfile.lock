@@ -1,10 +1,24 @@
 PODS:
   - FBNetworkErrorLogger (0.1.0)
   - Kiwi (2.4.0)
+  - OHHTTPStubs (4.3.0):
+    - OHHTTPStubs/Default (= 4.3.0)
+  - OHHTTPStubs/Core (4.3.0)
+  - OHHTTPStubs/Default (4.3.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (4.3.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (4.3.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (4.3.0)
 
 DEPENDENCIES:
   - FBNetworkErrorLogger (from `../`)
   - Kiwi
+  - OHHTTPStubs
 
 EXTERNAL SOURCES:
   FBNetworkErrorLogger:
@@ -13,5 +27,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FBNetworkErrorLogger: edcf67e8fa9ff18226767e892a2794cd4253e9bb
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  OHHTTPStubs: 0aec5755528693a165bd616cb79f69387de306a8
 
 COCOAPODS: 0.38.2
