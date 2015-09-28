@@ -1,0 +1,17 @@
+PODS:
+  - FBNetworkErrorLogger (0.1.0)
+  - Kiwi (2.4.0)
+
+DEPENDENCIES:
+  - FBNetworkErrorLogger (from `../`)
+  - Kiwi
+
+EXTERNAL SOURCES:
+  FBNetworkErrorLogger:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBNetworkErrorLogger: edcf67e8fa9ff18226767e892a2794cd4253e9bb
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+
+COCOAPODS: 0.38.2
