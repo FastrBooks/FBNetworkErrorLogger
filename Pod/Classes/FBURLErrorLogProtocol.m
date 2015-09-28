@@ -91,7 +91,6 @@ static FBURLErrorLogBlock errorLogBlock;
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    NSLog(@"%s", __FUNCTION__);
     [self.client URLProtocol:self didLoadData:data];
 }
 
@@ -102,7 +101,6 @@ static FBURLErrorLogBlock errorLogBlock;
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    NSLog(@"%s", __FUNCTION__);
     if (errorLogBlock) {
         errorLogBlock(error, connection.originalRequest.URL);
     }
