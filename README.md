@@ -1,6 +1,6 @@
 # FBNetworkErrorLogger
 
-[![CI Status](http://img.shields.io/travis/FastrBooks/FBNetworkErrorLogger.svg?style=flat)](https://travis-ci.org/Kirils Sivokozs/FBNetworkErrorLogger)
+[![CI Status](http://img.shields.io/travis/FastrBooks/FBNetworkErrorLogger.svg?style=flat)](https://travis-ci.org/FastrBooks/FBNetworkErrorLogger)
 [![Version](https://img.shields.io/cocoapods/v/FBNetworkErrorLogger.svg?style=flat)](http://cocoapods.org/pods/FBNetworkErrorLogger)
 [![License](https://img.shields.io/cocoapods/l/FBNetworkErrorLogger.svg?style=flat)](http://cocoapods.org/pods/FBNetworkErrorLogger)
 [![Platform](https://img.shields.io/cocoapods/p/FBNetworkErrorLogger.svg?style=flat)](http://cocoapods.org/pods/FBNetworkErrorLogger)
