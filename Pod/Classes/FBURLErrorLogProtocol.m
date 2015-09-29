@@ -58,6 +58,11 @@ static FBURLErrorLogBlock errorLogBlock;
     return request;
 }
 
++ (BOOL)requestIsCacheEquivalent:(NSURLRequest *)a toRequest:(NSURLRequest *)b
+{
+    return [super requestIsCacheEquivalent:a toRequest:b];
+}
+
 - (void)startLoading
 {
     NSMutableURLRequest *newRequest = [self.request mutableCopy];
@@ -73,7 +78,8 @@ static FBURLErrorLogBlock errorLogBlock;
 
 #pragma mark - NSURLConnectionDelegate
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+- (void)connection:(NSURLConnection *)connection
+didReceiveResponse:(NSURLResponse *)response
 {
     NSHTTPURLResponse *res = (NSHTTPURLResponse *)response;
     if (res.statusCode >= 400) {
@@ -84,19 +90,24 @@ static FBURLErrorLogBlock errorLogBlock;
                           res.URL);
         }
     }
-    [self.client URLProtocol:self
-          didReceiveResponse:response
-          cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+    NSURLCacheStoragePolicy policy = (NSURLCacheStoragePolicy)[[self request] cachePolicy];
+    [[self client] URLProtocol:self didReceiveResponse:response cacheStoragePolicy:policy];
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+- (void)connection:(NSURLConnection *)connection
+    didReceiveData:(NSData *)data
 {
-    [self.client URLProtocol:self didLoadData:data];
+    [[self client] URLProtocol:self didLoadData:data];
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+- (NSCachedURLResponse *)connection:(NSURLConnection *)connection
+                  willCacheResponse:(NSCachedURLResponse *)cachedResponse
 {
-    [self.client URLProtocolDidFinishLoading:self];
+    return cachedResponse;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    [[self client] URLProtocolDidFinishLoading:self];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
